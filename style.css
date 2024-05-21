@@ -1,0 +1,279 @@
+/* Styles généraux pour le corps de la page */
+body {
+    font-family: Arial,sans-serif ;
+    padding: 0;
+    margin: 0;
+    background-color: #ece7b3;    
+}
+/*Style de l'en-tete de la page  et ses elements*/
+header
+{
+    position: fixed; /*Fixe le header en haut de la page*/
+    top: 0;
+    display: flex;
+    background: #ece391;
+    height: 70px;
+    padding: 10px 0;/* Padding en haut et en bas */
+    justify-content: space-around; /* Espacement égal entre les éléments */
+    width: 100%;
+    z-index: 1000;/* S'assure que le header est au-dessus des autres éléments */
+}
+
+.header_logo
+{
+    display: flex;
+    align-items: center; 
+    width: 50%;
+}
+.header_logo span
+{
+
+    font-family: "Matura MT Script Capitals", cursive; /* Police personnalisée pour le texte */
+    font-size:x-large; 
+    color:#7e3c0d;
+    text-transform:uppercase;
+    margin-left: 62%; /* Marge à gauche pour centrer le texte */
+    font-weight: bold; /* Met le texte en gras */
+}
+
+/*Hauteur et largeur maximale du logo à 100 et 80 avec une bordure arrondie*/
+.logo {max-height: 100%; max-width: 80%; border-radius: 25px;}
+
+/*Style de la barre de naviguation et ses elements*/
+nav {
+    display: flex;
+    justify-content:center;
+    position: fixed; /* Fixe la barre de navigation */
+    top: 80px; /* Place la barre de navigation en dessous du header */
+    width: 100%;
+    padding: 2px 0;
+    height: 40px;
+}
+.nav_menu
+{
+    display: flex;
+    color: #fff9f9;
+    margin-left: 150px;
+}
+
+.nav_menu a
+{
+    padding-bottom: 3px;
+    position: relative; /* Position relative pour les pseudo-éléments */
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Style pour les éléments de la liste de navigation */
+.nav_menu li { list-style: none; width: 100px; }
+
+.nav_menu a:after
+{
+    position:absolute;
+    letter-spacing: 0; /* Pas d'espacement entre les lettres */
+    left: 0;
+    bottom: -2px; /* Positionné en bas avec un décalage */
+    content: ""; /* Contenu vide pour créer une ligne */
+    height: 1px;
+    width: 0%;
+    background-color: black;
+    transition: 0.5; /* Transition de 0.5 secondes */
+
+}
+/* Effet au survol pour étendre la ligne */
+.nav_menu a:hover:after{ width: 100%; }
+nav form { display: flex; margin-left: 400px;}
+
+/* Style pour le champ de recherche */
+nav input[type="search"] {
+    flex: 1; /* Prend tout l'espace disponible */
+    margin-right: 5px; /* Marge à droite */
+    border-radius: 5px;
+}
+
+/* Styles pour les boutons et les inputs de validation:  couleur initial marron et verte lors du clik (:hover)*/
+button,.return-button ,.form-group input[type="submit"] {
+    background-color: #7e3c0d;
+    border: none;
+    color: white;
+    padding: 5px 10px; /* Padding interne */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Effet au survol des boutons */
+button:hover, .return-button:hover,
+.form-group input[type="submit"]:hover {
+    background-color: #6b8e23;
+    transition: .5s; /* Transition de 0.5 secondes */
+}
+
+/* Style de la section principale (main) et ses éléments */
+main {
+    display: flex;
+    padding: 5px;
+    font-size: large;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items:normal;
+    margin-top: 120px;/* Marge en haut pour espacer du header */
+    height: 100%;
+}
+
+/* Style pour les titres h2 */
+h2
+{
+    font-family: "Cooper Black", cursive;
+    text-align: center;
+}
+/* Style pour la liste de produits 
+.listproduit { max-width:10%; height: 100%;}*/
+
+/* Style pour le conteneur de produits */
+.produits-container
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items:center;
+    text-align: center;
+    flex-wrap: wrap; /*Retour à la ligne des éléments */
+    min-height: 80%;
+    min-width: 80%;
+    
+}
+/* Style pour les boîtes d'affichage de produits */
+.produit-boite
+{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(253, 248, 168);
+    width: 50%;
+    height: 30%;
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre autour des boîtes */
+    border-radius: 10px;
+}
+.produit-boite p { font-family:"Bodoni MT Black" ; text-transform: uppercase;font-weight: bold; }
+
+/* Style pour les boutons d'édition et de suppression */
+.Edit-Del_Button
+{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap: 5px;
+    margin-left: 80%;/* Marge à gauche pour aligner les boutons */
+    
+
+}
+/* Style pour le formulaire */
+.formulaire 
+{
+    max-width:30%; 
+    min-width: 20%; 
+    padding: 10px; 
+    min-height: 20%;
+    max-height: 20%;
+    border-radius: 10px;
+}
+
+/* Style pour le formulaire de produit principal */
+main #productForm {
+    background-color: rgb(253, 248, 168);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block; /* Affiche les labels comme des blocs */
+    margin-bottom: 5px;
+}
+/* Style pour les champs de texte et les textarea */
+.form-group input[type="text"],
+.form-group textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+.form-group input[type="number"]
+{
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Style du footer et ses elements*/
+#footer {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: center;
+    padding: 45px;
+    flex-shrink: 0; /* Empêche le footer de rétrécir */
+    margin-top:11px;
+}
+
+#footer .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+#footer .footer-content p{
+    max-height: 60px;
+    margin-right: 20px;/* Marge à droite pour espacer le texte */
+}
+#footer .footer-text {
+    text-align: center;
+    flex-grow: 1; /* Le texte prend toute la largeur disponible */
+    margin-top: 20px; /* Marge en haut pour espacer le texte */
+}
+#footer .icons {
+    display: flex;
+    align-items: center;
+    font-size: 3.2em; /* Taille des icônes */
+}
+#footer .icons a {
+    margin-left: 10px;
+    text-decoration: none;
+}
+/* Style pour les icônes avec les couleurs corresponndantes*/
+#footer .icons a.facebook { color: #3b5998; }
+#footer .icons a.twitter { color: #1da1f2; }
+#footer .icons a.instagram { color: #f3286c; }
+#footer .icons a.email { color: #39afdd; }
+
+.searchresult
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Style pour le titre des résultats de recherche */
+.searchTITLE
+{
+    margin-top: 120px; /* Marge en haut pour que le titre soit en dessous du header*/
+}
+
+/* Style pour le bouton de retour à la page d'acceuil*/
+#Return_home
+{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
